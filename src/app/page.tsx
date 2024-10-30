@@ -10,7 +10,6 @@ export default function Home() {
                 <Header/>
             </header>
             <main className={'px-24 space-y-16'}>
-                1
                 <Hero/>
                 <Working/>
                 <Features/>
