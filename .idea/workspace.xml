@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="afe0cb86-bca5-4aea-92a0-32e5e1bfc311" name="Changes" comment="">
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/public/find_teacher.webp" afterDir="false" />
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/public/free_lesson.webp" afterDir="false" />
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/public/hero.webp" afterDir="false" />
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/public/teacher.jpg" afterDir="false" />
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/ui/TeacherModal.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/ui/modal.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/ui/sections/Features.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/ui/sections/Header.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/ui/sections/Hero.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/ui/sections/Working.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/.idea/vcs.xml" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/.idea/workspace.xml" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/package-lock.json" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/package-lock.json" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/package.json" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/package.json" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/src/app/globals.css" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/src/app/globals.css" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/src/app/layout.tsx" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/src/app/page.tsx" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/tailwind.config.ts" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/tailwind.config.ts" afterDir="false" />
-    </list>
+    <list default="true" id="afe0cb86-bca5-4aea-92a0-32e5e1bfc311" name="Changes" comment="initial commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +22,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$/WebstormProjects/toptutor" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "kickcs"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/kickcs/toptutor.git",
+    "accountId": "e0a6c797-803e-40d2-a281-dfab7fb9ee38"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -93,11 +86,43 @@
       <option name="presentableId" value="Default" />
       <updated>1730276092020</updated>
       <workItem from="1730276093086" duration="4572000" />
-      <workItem from="1730281994138" duration="8888000" />
+      <workItem from="1730281994138" duration="9331000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1730291930503</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730291930503</updated>
+    </task>
+    <task id="LOCAL-00002" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1730291951439</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730291951439</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
 </project>
