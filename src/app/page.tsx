@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import Working from "@/components/sections/Working";
@@ -10,10 +10,10 @@ import TeacherModal from "@/components/modals/TeacherModal";
 export default function Home() {
     return (
         <ModalProvider>
-            <header className={'mb-[96px]'}>
+            <header className="mb-12 lg:mb-[96px] lg:px-0">
                 <Header/>
             </header>
-            <main className={'px-24 space-y-16'}>
+            <main className="space-y-12 md:space-y-16 sm:px-12 lg:px-24">
                 <Hero/>
                 <Working/>
                 <Features/>
@@ -24,5 +24,5 @@ export default function Home() {
             <StudentModal/>
             <TeacherModal/>
         </ModalProvider>
-    )
+    );
 }
