@@ -1,15 +1,11 @@
 "use client"
-import React, {useState} from 'react';
+import React from 'react';
 import {Button} from "@/components/ui/button";
 import Image from 'next/image'
-import TeacherModal from "@/components/ui/TeacherModal";
+import {useModal} from "@/contexts/ModalContext";
 
 const Features = () => {
-
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
+    const {openModal} = useModal()
 
     return (
         <section>
@@ -30,12 +26,11 @@ const Features = () => {
                         <li>Увеличьте свой доход</li>
                         <li>Станьте топ тютором на TopTutor</li>
                     </ul>
-                    <Button className={'font-bold'} onClick={openModal}>
+                    <Button className={'font-bold'} onClick={() => openModal('teacher')}>
                         Стать репетитором
                     </Button>
                 </div>
             </div>
-            <TeacherModal open={isModalOpen} onClose={closeModal} />
         </section>
     );
 };

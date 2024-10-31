@@ -3,7 +3,7 @@ import React, {useEffect, useRef} from 'react';
 import {cn} from "@/lib/utils";
 import ReactDOM from 'react-dom';
 
-const Modal = ({children, open, onClose, className}: { children: React.ReactNode, open: boolean, onClose: () => void, className?: string }) => {
+const Modal = ({children, open, className}: { children: React.ReactNode, open: boolean, onClose: () => void, className?: string }) => {
     const ref = useRef<Element | null>(null);
 
     useEffect(() => {
@@ -31,7 +31,7 @@ const Modal = ({children, open, onClose, className}: { children: React.ReactNode
                 <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
                 <div className={cn("inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle", className)}>
-                    <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div className="bg-white w-full h-full px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                         {children}
                     </div>
                 </div>

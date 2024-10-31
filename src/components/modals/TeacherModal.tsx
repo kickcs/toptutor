@@ -1,18 +1,18 @@
+"use client"
 import Modal from "@/components/ui/modal";
 import {SquareX} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
 import {Label} from "@/components/ui/label";
 import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group";
+import {useModal} from "@/contexts/ModalContext";
 
-interface TeacherModalProps {
-    open: boolean;
-    onClose: () => void;
-}
+const TeacherModal = () => {
+    const {modalType, closeModal} = useModal()
+    const open = modalType === 'teacher'
 
-const TeacherModal = ({open, onClose}: TeacherModalProps) => {
     return (
-        <Modal open={open} onClose={onClose} className={'w-1/2'}>
+        <Modal open={open} onClose={closeModal} className={'w-1/2'}>
             <div className={'flex justify-between gap-8 items-center'}>
                 <div className={'flex flex-col gap-1'}>
                     <Label className={'font-bold'}>ФИО</Label>
@@ -77,10 +77,10 @@ const TeacherModal = ({open, onClose}: TeacherModalProps) => {
                 </div>
                 <Button
                     variant={'link'}
-                    onClick={onClose}
-                    className={'absolute top-0 right-0 aspect-auto w-4'}
+                    onClick={closeModal}
+                    className={'absolute top-0 right-0 aspect-auto w-8 hover:scale-110 transition-all duration-300'}
                 >
-                    <SquareX width={'16px'}/>
+                    <SquareX className={'w-full'}/>
                 </Button>
             </div>
             <Button className={'mr-auto mt-4'}>
