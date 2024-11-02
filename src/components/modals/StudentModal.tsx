@@ -1,16 +1,23 @@
-"use client"
+'use client'
+
 import React, {useState} from 'react'
 import Modal from "@/components/ui/modal"
-import {SquareX} from "lucide-react"
+import {CalendarIcon, SquareX} from "lucide-react"
 import {Button} from "@/components/ui/button"
 import {Label} from "@/components/ui/label"
 import {ToggleGroup, ToggleGroupItem} from "@/components/ui/toggle-group"
 import {Slider} from "@/components/ui/slider"
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select"
-import {useModal} from "@/contexts/ModalContext";
+import {useModal} from "@/contexts/ModalContext"
+import Image from 'next/image'
+import {ScrollArea} from "@/components/ui/scroll-area"
+import {Input} from "@/components/ui/input"
+import {Calendar} from "@/components/ui/calendar"
+import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
+import {cn} from "@/lib/utils";
+import {format} from "date-fns"
 
-
-export default function StudentModal() {
+export default function EnhancedStudentModal() {
     const {modalType, closeModal} = useModal()
     const open = modalType === 'student'
 
@@ -21,7 +28,16 @@ export default function StudentModal() {
         format: [],
         language: [],
         days: [],
-        price: 0
+        price: 0,
+        selectedTutor: {
+            id: undefined
+        },
+        contactInfo: {
+            type: 'phone',
+            value: '',
+        },
+        selectedDate: null,
+        selectedTime: '',
     })
 
     const updateFormData = (field: string, value: any) => {
@@ -35,7 +51,9 @@ export default function StudentModal() {
         {title: 'На каком языке должны быть занятия?', component: Language},
         {title: 'В какие дни вы хотите заниматься?', component: Days},
         {title: 'Какой у вас бюджет?', component: Price},
-        {title: 'Подобрать репетитора', component: FindTutor}
+        {title: 'Подходящие репетиторы', component: TutorList},
+        {title: 'Контактная информация', component: ContactInfo},
+        {title: 'Подтверждение', component: Confirmation}
     ]
 
     const nextStep = () => {
@@ -61,9 +79,13 @@ export default function StudentModal() {
             case 3:
                 return formData.language.length > 0
             case 4:
-                return true // Days step can be skipped
+                return true
             case 5:
-                return true // Price is always set
+                return true
+            case 6:
+                return formData.selectedTutor !== null
+            case 7:
+                return formData.contactInfo.value !== '' && formData.selectedDate !== null && formData.selectedTime !== ''
             default:
                 return false
         }
@@ -213,24 +235,164 @@ export default function StudentModal() {
         )
     }
 
-    function FindTutor() {
+
+    function TutorList() {
+        const teachers = [
+            {
+                id: 1,
+                name: 'Анна Иванова',
+                subject: 'Английский',
+                price: 100000,
+                rating: 4.8,
+                image: '/placeholder.svg?height=50&width=50'
+            },
+            {
+                id: 2,
+                name: 'Петр Сидоров',
+                subject: 'Математика',
+                price: 120000,
+                rating: 4.9,
+                image: '/placeholder.svg?height=50&width=50'
+            },
+            {
+                id: 3,
+                name: 'Елена Петрова',
+                subject: 'Физика',
+                price: 110000,
+                rating: 4.7,
+                image: '/placeholder.svg?height=50&width=50'
+            },
+        ]
+
         return (
-            <div className='flex flex-col items-center gap-4'>
-                <span className='text-xl text-center'>Мы собрали всю необходимую информацию. Нажмите кнопку ниже, чтобы найти подходящего репетитора.</span>
-                <Button onClick={() => console.log('Finding tutor with data:', formData)} className='mt-4'>
-                    Подобрать репетитора
-                </Button>
+            <div className='flex flex-col gap-4 max-h-[50vh] overflow-y-auto'>
+                <h3 className='text-lg font-semibold'>Мы нашли {teachers.length} репетиторов для вас</h3>
+                <ScrollArea className="h-[245px] w-full rounded-md border p-4 space-y-2">
+                    {teachers.map((teacher) => (
+                        <div key={teacher.id} className='flex items-center gap-4 my-2 p-4 border rounded-lg'>
+                            <Image
+                                src={teacher.image}
+                                alt={teacher.name}
+                                width={50}
+                                height={50}
+                                className='rounded-full'
+                            />
+                            <div className='flex-grow'>
+                                <h3 className='text-lg font-semibold'>{teacher.name}</h3>
+                                <p className='text-sm'>{teacher.subject}</p>
+                                <p className='text-sm'>{teacher.price.toLocaleString()} сум/час</p>
+                                <p className='text-sm'>Рейтинг: {teacher.rating}</p>
+                            </div>
+                            <Button
+                                size="sm"
+                                onClick={() => updateFormData('selectedTutor', teacher)}
+                                variant={formData.selectedTutor?.id === teacher.id ? 'default' : 'outline'}
+                            >
+                                {formData.selectedTutor?.id === teacher.id ? 'Выбрано' : 'Выбрать'}
+                            </Button>
+                        </div>
+                    ))}
+                </ScrollArea>
+            </div>
+        )
+    }
+
+    function ContactInfo() {
+        return (
+            <div className='flex flex-col gap-4'>
+                <div>
+                    <Label htmlFor="contactType">Способ связи</Label>
+                    <Select
+                        value={formData.contactInfo.type}
+                        onValueChange={(value) => updateFormData('contactInfo', {...formData.contactInfo, type: value})}
+                    >
+                        <SelectTrigger id="contactType">
+                            <SelectValue placeholder="Выберите способ связи"/>
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="phone">Телефон</SelectItem>
+                            <SelectItem value="telegram">Telegram</SelectItem>
+                        </SelectContent>
+                    </Select>
+                </div>
+                <div>
+                    <Label htmlFor="contactValue">
+                        {formData.contactInfo.type === 'phone' ? 'Номер телефона' : 'Имя пользователя в Telegram'}
+                    </Label>
+                    <Input
+                        id="contactValue"
+                        value={formData.contactInfo.value}
+                        onChange={(e) => updateFormData('contactInfo', {
+                            ...formData.contactInfo,
+                            value: e.target.value
+                        })}
+                        placeholder={formData.contactInfo.type === 'phone' ? '+998 90 123 45 67' : '@username'}
+                    />
+                </div>
+                <div>
+                    <Label>Выберите дату</Label>
+                    <Popover>
+                        <PopoverTrigger asChild>
+                            <Button
+                                variant={"outline"}
+                                className={cn(
+                                    "w-full justify-start text-left font-normal",
+                                    !formData.selectedDate && "text-muted-foreground"
+                                )}
+                            >
+                                <CalendarIcon className="mr-2 h-4 w-4"/>
+                                {formData.selectedDate ? format(formData.selectedDate, "PPP") :
+                                    <span>Выберите дату</span>}
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0" align="start">
+                            <Calendar
+                                mode="single"
+                                selected={formData.selectedDate}
+                                onSelect={(date) => updateFormData('selectedDate', date)}
+                                initialFocus
+                            />
+                        </PopoverContent>
+                    </Popover>
+                </div>
+                <div>
+                    <Label htmlFor="time">Выберите время</Label>
+                    <Select
+                        value={formData.selectedTime}
+                        onValueChange={(value) => updateFormData('selectedTime', value)}
+                    >
+                        <SelectTrigger id="time">
+                            <SelectValue placeholder="Выберите время"/>
+                        </SelectTrigger>
+                        <SelectContent>
+                            {Array.from({length: 24}, (_, i) => i).map((hour) => (
+                                <SelectItem key={hour} value={`${hour.toString().padStart(2, '0')}:00`}>
+                                    {`${hour.toString().padStart(2, '0')}:00`}
+                                </SelectItem>
+                            ))}
+                        </SelectContent>
+                    </Select>
+                </div>
+            </div>
+        )
+    }
+
+    function Confirmation() {
+        return (
+            <div className='text-center'>
+                <h3 className='text-xl font-bold mb-4'>Спасибо за бронирование!</h3>
+                <p>Мы скоро с вами свяжемся для подтверждения.</p>
             </div>
         )
     }
 
     return (
         <Modal open={open} onClose={closeModal} className='w-[45%] h-[50vh]'>
-            <div className='flex flex-col justify-between w-full h-full p-6'>
+            <div className='flex flex-col justify-between w-full min-h-full p-6'>
                 <div className='text-center mb-6'>
                     <span className='text-2xl font-bold'>{steps[currentStep].title}</span>
                 </div>
-                <div className='flex-grow overflow-y-auto'>
+                <div className=''>
                     {steps[currentStep].component()}
                 </div>
                 <div className='flex justify-between mt-6'>
