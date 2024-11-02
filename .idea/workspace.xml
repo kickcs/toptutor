@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="afe0cb86-bca5-4aea-92a0-32e5e1bfc311" name="Changes" comment="fix button, add adaptive">
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/.idea/workspace.xml" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/package-lock.json" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/package-lock.json" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/package.json" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/package.json" afterDir="false" />
+    <list default="true" id="afe0cb86-bca5-4aea-92a0-32e5e1bfc311" name="Changes" comment="add student modal fields">
       <change beforePath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/StudentModal.tsx" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/StudentModal.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/TeacherModal.tsx" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/TeacherModal.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/src/components/sections/Header.tsx" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/sections/Header.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/src/components/ui/modal.tsx" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/ui/modal.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +102,7 @@
       <workItem from="1730281994138" duration="14011000" />
       <workItem from="1730363563044" duration="12083000" />
       <workItem from="1730480283535" duration="517000" />
-      <workItem from="1730535517166" duration="10729000" />
+      <workItem from="1730535517166" duration="11164000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -166,7 +160,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730387423073</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add student modal fields">
+      <option name="closed" value="true" />
+      <created>1730551996942</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1730551996942</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add student modal fields">
+      <option name="closed" value="true" />
+      <created>1730552170329</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1730552170329</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +198,7 @@
     <MESSAGE value="fix commit" />
     <MESSAGE value="rework modal logic, add student modal" />
     <MESSAGE value="fix button, add adaptive" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix button, add adaptive" />
+    <MESSAGE value="add student modal fields" />
+    <option name="LAST_COMMIT_MESSAGE" value="add student modal fields" />
   </component>
 </project>
