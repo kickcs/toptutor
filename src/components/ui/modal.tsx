@@ -1,44 +1,53 @@
-'use client';
-import React, {useEffect, useRef} from 'react';
-import {cn} from "@/lib/utils";
-import ReactDOM from 'react-dom';
+'use client'
 
-const Modal = ({children, open, onClose, className}: { children: React.ReactNode, open: boolean, onClose: () => void, className?: string }) => {
-    const ref = useRef<Element | null>(null);
+import React, {useEffect, useRef} from 'react'
+import {cn} from "@/lib/utils"
+import {createPortal} from 'react-dom'
+
+interface ModalProps {
+    children: React.ReactNode
+    open: boolean
+    onClose: () => void
+    className?: string
+}
+
+export default function Modal({children, open, onClose, className}: ModalProps) {
+    const ref = useRef<Element | null>(null)
 
     useEffect(() => {
-        ref.current = document.body;
+        ref.current = document.body
         if (open) {
-            const originalStyle = window.getComputedStyle(document.body).overflow;
-            document.body.style.overflow = 'hidden';
+            const originalStyle = window.getComputedStyle(document.body).overflow
+            document.body.style.overflow = 'hidden'
             return () => {
-                document.body.style.overflow = originalStyle;
-            };
+                document.body.style.overflow = originalStyle
+            }
         }
-    }, [open]);
+    }, [open])
 
     if (!open) {
-        return null;
+        return null
     }
 
-    return ReactDOM.createPortal(
-        <div className={cn("fixed z-10 inset-0 overflow-y-auto")}>
-            <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-                <div className="fixed inset-0 transition-opacity" aria-hidden="true">
-                    <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
-                </div>
-
-                <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-
-                <div className={cn("inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle", className)}>
-                    <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                        {children}
-                    </div>
+    return createPortal(
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            <div
+                className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                aria-hidden="true"
+                onClick={onClose}
+            />
+            <div
+                className={cn(
+                    "relative bg-white rounded-lg shadow-xl",
+                    "w-full max-w-[95dvw] max-h-[90dvh] overflow-hidden",
+                    className
+                )}
+            >
+                <div className="max-h-[90dvh] overflow-y-auto">
+                    {children}
                 </div>
             </div>
         </div>,
         ref.current as Element
-    );
-};
-
-export default Modal;
+    )
+}

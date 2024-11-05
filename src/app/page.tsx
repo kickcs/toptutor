@@ -1,15 +1,19 @@
-import Header from "@/components/ui/sections/Header";
-import Hero from "@/components/ui/sections/Hero";
-import Working from "@/components/ui/sections/Working";
-import Features from "@/components/ui/sections/Features";
+"use client";
+import Header from "@/components/sections/Header";
+import Hero from "@/components/sections/Hero";
+import Working from "@/components/sections/Working";
+import Features from "@/components/sections/Features";
+import {ModalProvider} from "@/contexts/ModalContext";
+import StudentModal from "@/components/modals/StudentModal/StudentModal";
+import TeacherModal from "@/components/modals/TeacherModal";
 
 export default function Home() {
     return (
-        <>
-            <header className={'mb-[96px]'}>
+        <ModalProvider>
+            <header className="mb-12 lg:mb-[96px] lg:px-0">
                 <Header/>
             </header>
-            <main className={'px-24 space-y-16'}>
+            <main className="space-y-12 lg:max-w-[1440px] mx-auto md:space-y-16 sm:px-12 lg:px-24">
                 <Hero/>
                 <Working/>
                 <Features/>
@@ -17,6 +21,8 @@ export default function Home() {
             <footer>
                 {/*<Footer/>*/}
             </footer>
-        </>
-    )
+            <StudentModal/>
+            <TeacherModal/>
+        </ModalProvider>
+    );
 }
