@@ -10,7 +10,7 @@ const Features = () => {
     return (
         <section className="py-8">
             <div
-                className="w-full md:w-[85%] lg:w-[75%] mx-auto flex flex-col lg:flex-row gap-8 items-center border border-solid p-4 md:p-8 rounded-lg">
+                className="w-full mx-auto flex flex-grow flex-col lg:flex-row gap-8 items-center border border-solid p-4 md:p-8 rounded-lg">
                 <Image
                     src="/teacher.jpg"
                     height={500}

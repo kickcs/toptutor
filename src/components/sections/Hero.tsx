@@ -12,7 +12,7 @@ const Hero = () => {
                     Учись с лучшими репетиторами Узбекистана
                 </p>
                 <Button
-                    className="w-full sm:w-3/4 lg:w-1/2 font-bold mx-auto lg:mx-0"
+                    className="w-full sm:w-3/4 lg:w-2/3 font-bold text-xl lg:text-2xl h-12 mx-auto lg:mx-0"
                     onClick={() => openModal('student')}
                 >
                     Найти репетитора
@@ -21,9 +21,9 @@ const Hero = () => {
             <Image
                 src="/hero.webp"
                 alt="hero"
-                width={700}
-                height={500}
-                className="rounded-3xl w-full sm:w-3/4 lg:w-auto"
+                width={500}
+                height={400}
+                className="rounded-3xl w-full h-auto object-cover mt-8 -order-1 lg:order-1"
                 priority
             />
         </section>
