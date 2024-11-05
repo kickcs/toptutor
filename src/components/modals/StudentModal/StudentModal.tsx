@@ -15,6 +15,7 @@ import PriceStep from "@/components/modals/StudentModal/steps/PriceStep"
 import TutorList from "@/components/modals/StudentModal/steps/TutorList"
 import ContactInfoStep from "@/components/modals/StudentModal/steps/ContactInfoStep"
 import ConfirmationStep from "@/components/modals/StudentModal/steps/ConfirmationStep"
+import {Progress} from "@/components/ui/progress";
 
 type FormData = {
     subject: string
@@ -103,8 +104,8 @@ export default function EnhancedStudentModal() {
     const CurrentStepComponent = steps[currentStep].component
 
     return (
-        <Modal open={open} onClose={closeModal} className="lg:w-[40%] lg:h-[455px]">
-            <div className="flex flex-col w-full h-[455px]">
+        <Modal open={open} onClose={closeModal} className="lg:w-[40%] lg:h-[500px]">
+            <div className="flex flex-col w-full h-[500px]">
                 <div className="flex-grow flex flex-col p-6 overflow-hidden">
                     <div className="text-center mb-6">
                         <span className="text-2xl font-bold">{steps[currentStep].title}</span>
@@ -112,6 +113,7 @@ export default function EnhancedStudentModal() {
                     <div className="justify-center flex flex-grow items-center overflow-auto">
                         <CurrentStepComponent formData={formData} updateFormData={updateFormData}/>
                     </div>
+                    {currentStep < steps.length - 1 && <Progress value={(currentStep) / (steps.length -1 ) * 100} className={'w-full'}/>}
                     <div className="flex justify-between mt-6">
                         {currentStep > 0 && (
                             <Button onClick={prevStep}>

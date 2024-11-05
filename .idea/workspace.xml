@@ -4,27 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="afe0cb86-bca5-4aea-92a0-32e5e1bfc311" name="Changes" comment="fix studentmodal">
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/StudentModal/steps/ConfirmationStep.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/StudentModal/steps/ContactInfoStep.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/StudentModal/steps/DaysStep.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/StudentModal/steps/FormatStep.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/StudentModal/steps/LanguageStep.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/StudentModal/steps/PriceStep.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/StudentModal/steps/SearchStep.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/StudentModal/steps/TargetStep.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/StudentModal/steps/TutorList.tsx" afterDir="false" />
+    <list default="true" id="afe0cb86-bca5-4aea-92a0-32e5e1bfc311" name="Changes" comment="fix modal, fix design, add adaptation">
       <change beforePath="$USER_HOME$/WebstormProjects/toptutor/.idea/workspace.xml" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/package-lock.json" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/package-lock.json" afterDir="false" />
       <change beforePath="$USER_HOME$/WebstormProjects/toptutor/package.json" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/package.json" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/src/app/layout.tsx" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/src/app/page.tsx" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/StudentModal.tsx" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/StudentModal/StudentModal.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/TeacherModal.tsx" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/TeacherModal.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/src/components/sections/Features.tsx" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/sections/Features.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/src/components/sections/Header.tsx" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/sections/Header.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/src/components/sections/Hero.tsx" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/sections/Hero.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/src/components/sections/Working.tsx" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/sections/Working.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/src/components/ui/modal.tsx" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/ui/modal.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/StudentModal/StudentModal.tsx" beforeDir="false" afterPath="$USER_HOME$/WebstormProjects/toptutor/src/components/modals/StudentModal/StudentModal.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +109,7 @@
       <workItem from="1730535517166" duration="13291000" />
       <workItem from="1730554543052" duration="3898000" />
       <workItem from="1730726377440" duration="1104000" />
-      <workItem from="1730788792192" duration="12651000" />
+      <workItem from="1730788792192" duration="14375000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -207,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730552398122</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix modal, fix design, add adaptation">
+      <option name="closed" value="true" />
+      <created>1730810909829</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1730810909829</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +223,7 @@
     <MESSAGE value="fix button, add adaptive" />
     <MESSAGE value="add student modal fields" />
     <MESSAGE value="fix studentmodal" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix studentmodal" />
+    <MESSAGE value="fix modal, fix design, add adaptation" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix modal, fix design, add adaptation" />
   </component>
 </project>
